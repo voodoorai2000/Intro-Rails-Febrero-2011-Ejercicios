@@ -1,0 +1,11 @@
+Asociaciones
+	Mostrar todos los eventos de una persona en el show de personas
+	
+Validaciones
+  Añadir una validación para que la fecha de evento sea posterior al dia de hoy
+	Pista Buscar "validate"(sin la s) en http://api.rubyonrails.org/
+	Intentar crear un evento para ayer desde el navegador debemos ver un mensaje de error
+
+Scopes
+	Crear	un scope llamada "open" para los eventos que aún no han ocurrido
+	pista buscar "created_at" en http://guides.rubyonrails.org/active_record_querying.html
