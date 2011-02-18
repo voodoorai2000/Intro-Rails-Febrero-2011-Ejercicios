@@ -1,0 +1,57 @@
+Emails
+	proceso a seguir: 
+		crear una migracion que añada el campo email a la tabla people
+		pista buscar "Creating a Standalone Migration" en http://guides.rubyonrails.org/migrations.html
+		añadir el campo email en el formulario de personas
+		actualizar el email de una persona
+		asegurarnos que se ha guardado bien mostrando el email en el index de personas
+		
+		generar un nuevo mailer con una accion para enviar la invitacion
+		pistas
+		 	escribir en la consola "rails generate mailer"
+			buscar "ActionMailer::Base" en http://api.rubyonrails.org/
+		
+		pasarle la invitacion como parametro a este metodo en nuestro mailer
+		asignar a una variable de instancia la invitacion
+		actualizar "mail => :to" para que lo envie a la persona correcta
+		actualizar "default :from" para que sea "tu_nombre@tu_empresa_de_eventos.com"
+		añadir el nombre de la persona, el del evento y el "body" de la invitacion en la vista del email
+		llamar al metodo correspondiente en la accion create del controlador invitations para que se envie la invitacion por email.
+		comprobar que se manden emails al crear una invitacion desde el terminal que esta ejecutando el servidor de rails. 
+
+Formatos
+	JS
+		borrar una persona utilizando jquery
+		  proceso:
+		  	Instalar la gema:
+		  		sudo gem install jquery-rails
+		  	Decirle a rails que cargue la gema:
+		  		añadir al archivo "Gemfile", que está en el directorio principal de nuestra aplicación, la linea:
+		  			gem 'jquery-rails'
+		  	  en el archivo "/config/application.rb", dentro de la clase class Application < Rails::Application añadir:
+		  			config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
+		
+		  	Ejecutar el comando para copiar las librerias de Jquery:
+		  		rails generate jquery:install --ui (substituir el archivo rail.js cuando nos lo pida)
+		  	
+				substituir public/rails.js por https://github.com/rails/jquery-ujs/raw/master/src/rails.js
+		
+				Reiniciar el servidor de rails para que se cargue el nuevo javascript.
+				
+		  	añadir funcionalidad javascript al link para borrar una persona en /app/views/people/index.html.erb
+		  	pista buscar "link_to" (Action::View::Helpers::UrlHelper) en http://api.rubyonrails.org
+		  	
+		  	añadir un id "person_<id>" al tr de cada persona en el index 
+		  	hacer que la accion destroy del controlador people responda al formato js
+		  	pista añadir "format.js" al loop respond_to de esa acción
+      
+		  	crear la vista app/views/people/destroy.js.erb para que esconda la persona borrada con Jquery:
+		  		$("#person_<%= params[:id] %>").hide();
+      
+		  	comprobar en el navegador
+		
+
+				
+			
+		
+			
