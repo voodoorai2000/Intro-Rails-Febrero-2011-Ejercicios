@@ -1,0 +1,7 @@
+Añadir una foto como attachment al email de una invitación 
+y comprobar que nos se envia desde el log
+
+Crear un link en el show de un evento
+que cargue por AJAX el formulario para crear una invitación.
+Pista: esto tendría que ir en algún sitio... 
+$("#invitation").html("<%= escape_javascript(render :partial => "form") %>");
